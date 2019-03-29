@@ -7,6 +7,7 @@ DROP TABLE types IF EXISTS;
 DROP TABLE owners IF EXISTS;
 DROP TABLE roles IF EXISTS;
 DROP TABLE users IF EXISTS;
+DROP TABLE offers IF EXISTS;
 
 
 CREATE TABLE vets (
@@ -79,4 +80,13 @@ CREATE TABLE roles (
 );
 ALTER TABLE roles ADD CONSTRAINT fk_username FOREIGN KEY (username) REFERENCES users (username);
 CREATE INDEX fk_username_idx ON roles (username);
+
+
+CREATE TABLE offers (
+  id              INTEGER IDENTITY PRIMARY KEY,
+  title        	  VARCHAR(100) NOT NULL,
+  description     VARCHAR(1200) NOT NULL,
+  discount     	  DOUBLE NOT NULL,
+  expire_date     DATE
+);
 
