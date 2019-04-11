@@ -35,6 +35,7 @@ import {PartsModule} from './parts/parts.module';
 import {SpecialtiesModule} from './specialties/specialties.module';
 import {HttpErrorHandler} from './error.service';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { OffersModule } from './offers/offers.module';
 
 
 @NgModule({
@@ -51,6 +52,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     PetTypesModule,
     VetsModule,
     SpecialtiesModule,
+    OffersModule,
     PartsModule,
     BrowserAnimationsModule,
     AppRoutingModule

@@ -1,3 +1,49 @@
-<p>
-  offer-list works!
-</p>
+
+<div class="container-fluid">
+  <div class="container xd-container">
+
+    <h2>Offers</h2>
+
+    <table id="offersTable" class="table table-striped">
+      <thead>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Discount</th>
+        <th>Expire Date</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody *ngIf="offers">
+      <tr *ngFor="let offer of offers">
+        <td>
+          {{ offer.title }}
+        </td>
+        <td>
+          {{ offer.description }}
+        </td>
+        <td>
+          {{ offer.discount }}
+        </td>
+        <td>
+          {{ offer.expireDate }}
+        </td>
+        <td>
+          <button class="btn btn-default" (click)="editOffer(offer)">Edit</button>
+          <button class="btn btn-default" (click)="deleteOffer(offer)">Delete</button>
+        </td>
+      </tr>
+      </tbody>
+      <tbody *ngIf="!offers">
+        <tr>
+          <td colspan="5">
+            No information
+          </td>
+        </tr>
+        </tbody>
+    </table>
+    <div>
+      <button class="btn btn-default" (click)="gotoHome()">Home</button>
+      <button class="btn btn-default" (click)="addOffer()">Add Offer</button>
+    </div>
+  </div>
